@@ -12,7 +12,7 @@ import (
 // define eureka config
 var configStr = `{
   "instance": {
-	"instanceId" : "${ipAddress}:${appName}:${port}",
+	"instanceId" : "${ipAddress}:${port}",
     "hostName":"${ipAddress}",
     "app":"${appName}",
     "ipAddr":"${ipAddress}",
@@ -40,11 +40,9 @@ var configStr = `{
   }
 }`
 
-
-
 // newConfig load cfg from configStr
-func newConfig(appName,localip, port, securePort string)  string{
-	if localip == ""{
+func newConfig(appName, localip, port, securePort string) string {
+	if localip == "" {
 		localip = getLocalIP()
 	}
 	// load config
